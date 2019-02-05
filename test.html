@@ -10,18 +10,18 @@
   <script>
    const startElement = document.getElementById("start");
    startElement.addEventListener("click", () => {
-   let i = 1;
-   
-   setInterval(() => {
-    Puck.write("LED" + i + ".set();\n");
-    i++;
-    
-    if (i > 3)
-    {
-     i = 1;
-    }
-   }, 1000);
-   };
+     let i = 1;
+
+     setInterval(() => {
+      Puck.write("LED" + i + ".set();\n");
+      i++;
+
+      if (i > 3)
+      {
+       i = 1;
+      }
+     }, 1000);
+   });
   </script>
  </body>
 </html>
