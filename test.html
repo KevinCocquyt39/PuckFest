@@ -3,13 +3,12 @@
  </head>
  <body>
   <script src="https://www.puck-js.com/puck.js"></script>
-  <button onclick="Puck.write('LED1.set();\n');">On!</button>
-  <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
-  <button id="start">Start</button>
+  <button id="start-interval">Start interval</button>
+  <button id="start-button">Start button</button>
   
   <script>
-   const startElement = document.getElementById("start");
-   startElement.addEventListener("click", () => {
+   const startIntervalElement = document.getElementById("start-interval");
+   startIntervalElement.addEventListener("click", () => {
      console.log("reset all");
      Puck.write("LED1.reset();\n");
      Puck.write("LED2.reset();\n");
@@ -33,6 +32,13 @@
        i = 1;
       }
      }, 1000);
+   });
+   
+   const startButtonElement = document.getElementById("start-button");
+   startButtonElement.addEventListener("click", () => {
+    Puck.eval("BTN.read()", function(d) {
+      console.log(d);
+    });
    });
   </script>
  </body>
