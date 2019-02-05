@@ -13,6 +13,10 @@
      let i = 1;
 
      setInterval(() => {
+      if (i > 1) {
+        Puck.write("LED" + (i - 1) + ".reset();\n");
+      }
+      
       Puck.write("LED" + i + ".set();\n");
       i++;
 
