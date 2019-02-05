@@ -5,5 +5,19 @@
   <script src="https://www.puck-js.com/puck.js"></script>
   <button onclick="Puck.write('LED1.set();\n');">On!</button>
   <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
+  
+  <script>
+   let i = 1;
+   
+   setInterval(() => {
+    Puck.write("LED" + i + ".set();\n");
+    i++;
+    
+    if (i > 3)
+    {
+     i = 1;
+    }
+   }, 1000);
+  </script>
  </body>
 </html>
