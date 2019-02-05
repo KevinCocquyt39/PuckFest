@@ -60,6 +60,7 @@
 
     function getLightValue() {
       Puck.eval("Puck.light()", function(v) {
+       console.log("light value", v);
         path.style.fill="rgb("+Math.round(v*255)+",0,0)";
         setTimeout(function() {
           getLightValue();
