@@ -4,7 +4,7 @@
  <body>
   <script src="https://www.puck-js.com/puck.js"></script>
   <button id="start-interval">Start interval</button>
-  <button id="start-button">Start button</button>
+  <button id="read-button-press">Read button press</button>
   
   <script>
    const startIntervalElement = document.getElementById("start-interval");
@@ -34,8 +34,8 @@
      }, 1000);
    });
    
-   const startButtonElement = document.getElementById("start-button");
-   startButtonElement.addEventListener("click", () => {
+   const readButtonPressElement = document.getElementById("read-button-press");
+   readButtonPressElement.addEventListener("click", () => {
     Puck.eval("BTN.read()", function(d) {
       console.log(d);
     });
