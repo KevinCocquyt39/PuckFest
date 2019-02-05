@@ -10,6 +10,10 @@
   <script>
    const startElement = document.getElementById("start");
    startElement.addEventListener("click", () => {
+     Puck.write("LED1.reset();\n");
+     Puck.write("LED2.reset();\n");
+     Puck.write("LED3.reset();\n");
+    
      let i = 1;
 
      setInterval(() => {
