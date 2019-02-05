@@ -10,18 +10,22 @@
   <script>
    const startElement = document.getElementById("start");
    startElement.addEventListener("click", () => {
+     console.log("reset all");
      Puck.write("LED1.reset();\n");
      Puck.write("LED2.reset();\n");
      Puck.write("LED3.reset();\n");
     
      let i = 1;
-
+     
      setInterval(() => {
       if (i > 1) {
+       console.log("reset led index", i - 1);
         Puck.write("LED" + (i - 1) + ".reset();\n");
       }
       
+      console.log("set led index", i);
       Puck.write("LED" + i + ".set();\n");
+      
       i++;
 
       if (i > 3)
